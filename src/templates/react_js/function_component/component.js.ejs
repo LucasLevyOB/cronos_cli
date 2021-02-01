@@ -1,0 +1,25 @@
+import React from "react";
+
+<% if(styleType === "js") { -%>
+import useStyles from "./styles";
+<% } else { -%>
+import "./styles";
+<% } -%>
+
+const <%= name %> = () => {
+<% if(styleType === "js") { -%>
+  const classes = useStyles();
+
+<% } -%>
+  return (
+  <% if(styleType === "js") { -%>
+    <div className="{classes.root}">
+  <% } else { -%>
+    <div className="{root}">
+  <% } -%>
+      <h1><%= name %> is Working</h1>
+    </div>
+  );
+};
+
+export default <%= name %>;
